@@ -1,2 +1,3 @@
 weather_city:paris
 number_of_forecast:5
+horoscope:balance

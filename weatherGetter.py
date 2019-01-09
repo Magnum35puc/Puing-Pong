@@ -12,7 +12,7 @@ def getWeather():
 
     weather = Weather(unit = Unit.CELSIUS)
 
-    location = weather.lookup_by_location(city)
+    location = weather.lookup_by_latlng(53.3494, -6.2601)
 
     days = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
 
@@ -29,6 +29,7 @@ def getWeather():
         final += txt + "\n\n"
 
     #print(final)
-    return final[:-2]
+    #return final[:-2]
+    return ""
 
-
+print(getWeather())

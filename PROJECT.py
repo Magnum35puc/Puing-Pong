@@ -2,15 +2,16 @@ import tkinter as tk
 import datetime
 from tkinter import ttk
 import time
-from weatherGetter import getWeather
+#from weatherGetter import getWeather ##TODO
+from horoscopeGetter import getMyHoro
 
 LARGE_FONT = ("arial", 30)
 TIME_FONT = ("arial", 40)
 WEATHER_FONT = ("arial", 20)
 
 NWTEXT = "Date"
-NETEXT = "Horoscope"
-SWTEXT = getWeather()
+NETEXT = getMyHoro()
+SWTEXT = ""#getWeather()
 SETEXT = "News"
 
 def getHM():
