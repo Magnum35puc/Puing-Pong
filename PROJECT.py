@@ -8,8 +8,10 @@ from horoscopeGetter import getMyHoro
 LARGE_FONT = ("arial", 30)
 TIME_FONT = ("arial", 40)
 WEATHER_FONT = ("arial", 20)
+DAYS = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+MONTHS = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
 
-NWTEXT = "Date"
+NWTEXT = DAYS[datetime.datetime.now().weekday()] + datetime.datetime.today().strftime(" %d ") + MONTHS[int(datetime.datetime.today().strftime("%m"))]
 NETEXT = getMyHoro()
 SWTEXT = ""#getWeather()
 SETEXT = "News"
