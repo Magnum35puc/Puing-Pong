@@ -1,3 +1,4 @@
-weather_city:paris
-number_of_forecast:5
+WEATHER_API_KEY:tMRoU0kAYBvPNFsbb2Iox8FPAoKi0NJf
+unit_type:True
+city_id:623
 horoscope:balance
