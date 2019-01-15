@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import tkinter as tk
 import datetime
 from tkinter import ttk
