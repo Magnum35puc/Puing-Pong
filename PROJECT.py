@@ -101,7 +101,9 @@ class MainPage(tk.Frame):
         self.update_news()
         
         global a
+        global boolUpdate
         a = datetime.datetime.now()
+        boolUpdate = True
         self.update_news_color()
 
     def update_clock(self):
@@ -111,30 +113,39 @@ class MainPage(tk.Frame):
         self.HM.configure(text=HM)
         self.S.configure(text=S)
         self.root.after(1000, self.update_clock)
-
         
     def update_news(self):
         news = newsAPI.getNews()
         
         self.SE.configure(text=news)
-        self.root.after(10000, self.update_news)
 
     def update_news_color(self):
         global a
+        global boolUpdate
         b = datetime.datetime.now()
         delta = b - a
 
-        counter = int(round(255* (sin(delta.total_seconds()/10*math.pi)*3**2)))
-        if counter > 255:
-            counter = 255
+        counter = int(round(255* (sin(delta.total_seconds()/10*math.pi)*1.3**2)))
+
         if counter < 0:
             counter = -counter
+            if boolUpdate:
+                boolUpdate = False
+                self.update_news()
+        else:
+            if not boolUpdate:
+                boolUpdate = True
+                self.update_news()
+        
+        if counter > 255:
+            counter = 255
+            
         col = '#{:02x}{:02x}{:02x}'.format(counter,counter,counter)
         self.SE.configure(fg = col)
         self.root.after(50, self.update_news_color)
 
 app = Main()
-app.geometry("1000x1280")
+app.attributes("-fullscreen", True)
 app.mainloop()
 
 
